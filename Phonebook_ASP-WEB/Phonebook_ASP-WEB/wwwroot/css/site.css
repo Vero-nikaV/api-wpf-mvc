@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+main {
+    width: 80%;
+    padding: 15px 10%;
+    margin: 50px 0;
+}
+
+
+
+    main label {
+        width: 100%;
+        margin-top: 10px;
+        display: block;
+    }
+
+    main input:not([type="submit"]) {
+        width: 90%;
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid silver;
+        outline: none;
+        margin-top: 7px;
+    }
+
+        main input:not([type="submit"]):focus {
+            border: 1px solid #ff0000;
+        }
+
+input[type="submit"] {
+    width: 250px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 7px;
+    background: #78DBE2;
+    font-weight: bold;
+    color: #003153;
+    cursor: pointer;
+}
+
+
+
+main form span {
+    color: #ff0000;
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+}
+
+.column-left {
+    width: 50%;
+    float: left;
+    text-align: left
+}
+
+.column-right {
+    width: 50%;
+    float: right;
+    text-align: right
+}

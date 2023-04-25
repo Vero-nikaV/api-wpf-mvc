@@ -1,0 +1,46 @@
+﻿@*Страница администратора*@
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization;
+@model IEnumerable<User>
+
+<h2>Список контактов</h2>
+
+@*Создание таблицы*@
+
+<table class="table">
+    <tr wight="10px"><th>UserName</th><th>Role</th><th></th><th></th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.UserName</td>
+           
+            @if (item.idRole == 1)
+            {
+                <td>user
+                </td>
+            }
+
+            else {<td>admin </td>}
+            <td>
+                @if (item.idRole == 1)
+                {
+                    <a method="post" asp-action="AdminOn" asp-controller="Admin" asp-route-id=@item.Id>
+                        <input type="submit" value="Назначить администратором" />
+                    </a>
+                }
+                else
+                {
+                    <a method="post" asp-action="AdminOff" asp-controller="Admin" asp-route-id=@item.Id>
+                        <input type="submit" value="Снять функции администратора" />
+                    </a>
+                }
+            </td>
+            <td>
+                <a method="post" asp-action="Delete" asp-controller="Admin" asp-route-id=@item.Id>
+                    <input type="submit" value="Удалить" />
+                </a>
+            </td>
+        </tr>
+    }
+</table>

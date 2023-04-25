@@ -1,0 +1,36 @@
+﻿@*@*Страница создания нового контакта*@
+
+@model Contact
+@{
+    ViewData["Title"] = "Новый контакт";
+}
+
+<h1>Новый контакт</h1>
+<form method="post" asp-controller="NewContact" asp-action="Check">
+
+    <label asp-for="Surname"></label>
+    <input asp-for="Surname" />
+    <span asp-validation-for="Surname"></span>
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Patronimic"></label>
+    <input asp-for="Patronimic" />
+    <span asp-validation-for="Patronimic"></span>
+
+    <label asp-for="Phone"></label>
+    <input asp-for="Phone" />
+    <span asp-validation-for="Phone"></span>
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description" />
+    <span asp-validation-for="Description"></span>
+
+    <input type="submit" value="Готово" />
+</form>

@@ -1,0 +1,34 @@
+﻿@*Станица редактирования контакта*@
+
+@model Contact
+
+<h2>Редактирование</h2>
+<form method="post" asp-action="Update" asp-controller="CertainContact" asp-route-id="@Model.Id">
+    <p>
+        <label asp-for="Surname">Фамилия</label><br />
+        <input type="text" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Patronimic">Отчество</label><br />
+        <input type="text" asp-for="Patronimic" />
+    </p>
+    <p>
+        <label asp-for="Phone">Телефон</label><br />
+        <input type="text" asp-for="Phone" />
+    </p>
+    <p>
+        <label asp-for="Address">Адрес</label><br />
+        <input type="text" asp-for="Address" />
+    </p>
+    <p>
+        <label asp-for="Description">Описание</label><br />
+        <input type="text" asp-for="Description" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</form>

@@ -1,0 +1,22 @@
+﻿@*Предствление карточки конретного контакта*@
+
+@model Contact
+
+<h2>@Model.Surname @Model.Name @Model.Patronimic </h2>    @*ФИО контакта*@
+@*Создание таблицы*@
+<table class="table">
+    <tr><td>Телефон</td><td>@Model.Phone</td></tr>
+    <tr><td>Адрес</td><td>@Model.Address</td></tr>
+    <tr height="100px"><td>Описание</td><td>@Model.Description</td></tr>
+</table>
+
+<a method="post" asp-controller="CertainContact" asp-action="Delete" asp-route-id="@Model.Id">
+    <input type="submit" value="Удалить" />
+</a>
+
+
+<a method="post" asp-controller="CertainContact" asp-action="Update" asp-route-id="@Model.Id">
+    <input type="submit" value="Редактировать" />
+</a>
+
+

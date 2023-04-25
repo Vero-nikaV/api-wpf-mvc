@@ -1,0 +1,30 @@
+﻿@*"Шапка" сайта*@
+
+@if (User.Identity.IsAuthenticated)
+{
+        <div class="column-right">
+
+        <label> @User.Identity.Name в системе</label>
+        <form method="post" asp-controller="Account" asp-action="Logout" id="logoutform" asp-antiforgery="true">
+            <input type="submit" value="Выход" />
+       </form>
+
+    </div>
+}
+else
+{
+    <div class="column-right">
+        <a href="/Account/Login">Вход</a>
+        <a href="/Account/Register">Регистрация </a>
+    </div>
+}
+@if (User.IsInRole("admin"))
+{ 
+    <div class="column-left">
+    <a asp-action="Index" asp-controller="Admin">
+        <input type="submit" value="Страница администратора" />
+    </a>
+    </div>
+}
+
+
